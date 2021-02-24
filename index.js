@@ -77,11 +77,9 @@ app.put('/api/notes/:id', (req, res) => {
 app.delete('/api/notes/:id', (req, res) => {
     const id = req.params.id
 
-    Notes.findByIdAndDelete(id).then(result => {
-      console.log(result);
+    Note.findByIdAndDelete(id).then(result => {
+      res.status(204).end()
     })
-
-    res.status(204).end()
 })
 
 
